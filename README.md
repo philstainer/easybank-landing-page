@@ -3,7 +3,7 @@
 
 &#xa0;
 
-<a href="https://easybank-landing-page-qslgdxi6x.vercel.app/">Demo</a>
+<a href="https://easybank-landing-page.philstainer.vercel.app/">Demo</a>
 
 </div>
 
