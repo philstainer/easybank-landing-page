@@ -1,0 +1,75 @@
+.feature {
+  text-align: center;
+  background-color: $lightGrayishBlue;
+
+  @include breakpoint-up(large) {
+    text-align: left;
+
+    .container {
+      padding-top: 10rem;
+      padding-bottom: 10rem;
+    }
+  }
+
+  .container > h2 {
+    font-size: 3.5rem;
+    font-weight: $font-ws;
+    line-height: 1.15;
+    color: $darkBlue;
+    margin-bottom: 2.4rem;
+  }
+
+  .container > p {
+    margin-bottom: 7rem;
+
+    @include breakpoint-up(large) {
+      margin-bottom: 7rem;
+      max-width: 60rem;
+    }
+  }
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint-up(medium) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    @include breakpoint-up(large) {
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__item {
+    @include breakpoint-up(medium) {
+      flex: 0 50%;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+
+      @include breakpoint-up(large) {
+        margin-right: 3rem;
+        margin-bottom: unset;
+      }
+    }
+  }
+
+  &__icon {
+    margin-bottom: 2.5rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: $font-ws;
+    color: $darkBlue;
+    margin-bottom: 2.5rem;
+  }
+
+  &__description {
+    margin-bottom: unset;
+  }
+}

@@ -1,0 +1,68 @@
+.articles {
+  .container--padded {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+}
+
+.article {
+  &__content > h2 {
+    font-size: 3.5rem;
+    font-weight: $font-ws;
+    line-height: 1.15;
+    color: $darkBlue;
+    margin-bottom: 5rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 3rem;
+
+    @include breakpoint-up(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint-up(large) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    background-color: $white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 150ms ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__image {
+    height: 20rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__text {
+    padding: 3rem;
+  }
+
+  &__author {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  &__title {
+    font-weight: $font-ws;
+    line-height: 1.15;
+    color: $darkBlue;
+  }
+
+  &__description {
+    font-size: $font-sm;
+  }
+}

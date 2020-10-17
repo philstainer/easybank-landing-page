@@ -1,0 +1,114 @@
+.footer {
+  background-color: $darkBlue;
+  color: $white;
+  padding: 4rem 4rem 1rem 4rem;
+  text-align: center;
+
+  .container {
+    @include breakpoint-up(large) {
+      display: grid;
+      grid-template-columns: minmax(18rem, 1fr) 10rem repeat(2, 1fr) 3fr;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas:
+        'logo x links1 links2 cta'
+        'social x links1 links2 cta';
+      justify-items: start;
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 3rem;
+    display: inline-block;
+
+    @include breakpoint-up(large) {
+      grid-area: logo;
+    }
+  }
+
+  &__social {
+    margin-bottom: 3rem;
+
+    @include breakpoint-up(large) {
+      grid-area: social;
+      margin-bottom: 0;
+    }
+
+    a:not(:last-child) {
+      margin-right: 1rem;
+    }
+
+    a {
+      svg path {
+        transition: fill 0.2s ease-in-out;
+      }
+    }
+
+    a:hover svg path {
+      fill: $limeGreen;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    font-size: $font-sm;
+
+    @include breakpoint-up(large) {
+      align-items: start;
+    }
+
+    &.col1 {
+      @include breakpoint-up(large) {
+        grid-area: links1;
+      }
+    }
+
+    &.col2 {
+      margin-bottom: 4rem;
+
+      @include breakpoint-up(large) {
+        grid-area: links2;
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      margin-bottom: 1.5rem;
+      transition: color 0.2s ease-in-out;
+
+      &:hover {
+        color: $limeGreen;
+      }
+    }
+  }
+
+  &__cta {
+    @include breakpoint-up(large) {
+      grid-area: cta;
+      justify-self: end;
+      text-align: end;
+    }
+
+    > button {
+      margin-bottom: 3rem;
+    }
+
+    > div {
+      font-size: $font-sm;
+      opacity: 0.5;
+    }
+  }
+}
+
+.attribution {
+  background-color: $darkBlue;
+  color: $white;
+  padding: 2rem;
+  font-size: 1.1rem;
+  text-align: center;
+
+  a {
+    color: $limeGreen;
+  }
+}
